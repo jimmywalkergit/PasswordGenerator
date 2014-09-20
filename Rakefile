@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-TemplateSite::Application.load_tasks
+PasswordGenerator::Application.load_tasks

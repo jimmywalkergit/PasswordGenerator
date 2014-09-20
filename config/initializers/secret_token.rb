@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TemplateSite::Application.config.secret_key_base = '771dc909f53154ba790c4cf22de25e8088e2e22fd3957365543b69d86daa720a278739ae72d6366b4f422c86b1ae8e469cb9d5baea7f607c4e3e6140e8ab3cb6'
+PasswordGenerator::Application.config.secret_key_base = '450cc337974685c287a45ee5ecb5d8b860a284140123e5e86fbd3979c7568451dd93e9cef0f770ad5831bd3c7626d65c4ce24bbeeec85e655fb18d20064723c9'

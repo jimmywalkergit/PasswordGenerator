@@ -1,50 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title))%></title>
+  <title>PasswordGenerator</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 
-   <%= stylesheet_link_tag "application", media: "all",
-                                           "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-  <%= render 'layouts/shim' %>
-  
-
+  <%= render 'layouts/header'%>
 </head>
-
 <body>
+	<div class="container">
+	<div class= "center hero-unit">
+
+  		<%= yield%>
 
 
-
-
-
-
-
-
-<header>
-<%= render 'layouts/header'%>
-
-</header>
-
-
-
-<div class="container">
-<div class= "center hero-unit">
-
-  <%= yield%>
-
-
-</div>
-
-
-</div>
+	</div>
+	</div>
 
 
 
 </body>
-
-<%= render 'layouts/footer'%>
-
-
-
-  </html>
+</html>
