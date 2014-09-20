@@ -11,6 +11,8 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+
+  padding-top: 70px;
   margin: 0;
 }
 article,
@@ -239,6 +241,7 @@ th {
     background: #fff !important;
   }
   .navbar {
+
     display: none;
   }
   .table td,
@@ -3769,7 +3772,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {

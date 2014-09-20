@@ -1,7 +1,9 @@
 PasswordGenerator::Application.routes.draw do
+  get "pages/Homepage"
+  get "pages/Page1"
+  get "pages/Page2"
 root 'pages#Homepage'
-get 'pages#page1'
-
+match '/page1', to: 'pages#Page1', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

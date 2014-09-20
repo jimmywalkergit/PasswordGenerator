@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   def Homepage
   end
 
-  def page1
+  def Page1
+  end
+
+  def Page2
   end
 end

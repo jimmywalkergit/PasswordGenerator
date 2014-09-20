@@ -1,1 +1,97 @@
-This is the homepage
+    
+
+
+
+<script type="text/javascript">
+
+
+prompt("this thing worked");
+
+  var x = document.getElementById('mytextarea').value;
+
+  x.value = "You clicked the button!!!";
+
+
+
+
+
+
+
+  function testfunction(){
+  
+
+
+    if (document.createTextNode){
+      var mytext=document.createTextNode("You Pressed the button!!");
+      document.getElementById("body").appendChild(mytext);
+
+
+}
+}
+
+  
+
+
+}
+
+
+
+</script>
+
+
+
+    <div class="container" id="body">
+
+
+      <h1>Password Generator</h1>
+      <br>
+
+
+<textarea class="form-control" id="mytextarea" rows="3"></textarea>
+<input id="clickMe" type="button" value="Generate Password" onclick="testfunction();" />
+
+
+
+
+
+    </div><!-- /.container -->
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap core JavaScript
+
+
+
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
