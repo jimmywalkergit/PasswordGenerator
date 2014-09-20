@@ -2724,6 +2724,7 @@ select[multiple].input-lg {
   }
 }
 .btn {
+  padding-top: 50px;
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -2813,6 +2814,7 @@ fieldset[disabled] .btn-default.active {
   background-color: #333;
 }
 .btn-primary {
+  
   color: #fff;
   background-color: #428bca;
   border-color: #357ebd;
