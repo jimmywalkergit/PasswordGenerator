@@ -44,6 +44,31 @@ module ApplicationHelper
 
 
 
+def randomtest()
+i = 0
+input = "!@#$%&+="
+
+
+stringlist = ["and", "or", "the", "each", "cat", "dog", "horse", "pig", "rope", "house", "lake", "tree", "apple", 
+"big", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy"]
+randomstring = ""
+
+
+while i < 4 do
+
+
+randomstring += input[rand(input.length)]
+randomstring += stringlist[rand(stringlist.length)]
+
+i += 1
+end
+
+return randomstring
+
+
+end
+
+
 
 end
 
