@@ -31,7 +31,7 @@
 
 <script type="text/javascript">
 
-
+var counter = 1;
 
 
 
@@ -42,8 +42,8 @@
   function testfunction(){
   
 
-    document.getElementById("mytextarea").value = "You clicked the button";
-     
+    document.getElementById("mytextarea").value = "You clicked the button " + counter + " times";
+     counter += 1;
 
 
 }
