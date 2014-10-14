@@ -15,11 +15,13 @@ display: none;
 
 
 <textarea class="form-control" id="mytextarea" rows="3"></textarea>
-<input class = "btn btn-primary" id="clickMe" type="button" value="Generate Password" onclick="testfunction();" />
+<input class = "btn btn-primary" id="clickMe" type="button" value="Generate Password" onclick="displaypass();" />
+
+<input class = "btn btn-primary" id="clickMe2" type="button" value="Hide Pass1" onclick="hidepass();" />
 <br>
 <br>
 
-<p>Random 8 digit number: <%=randomnums()%></p>
+<p id= "hide1">Random 8 digit number: <%=randomnums()%></p>
 
 <br>
 
@@ -51,16 +53,21 @@ var counter = 1;
 
 
 
-  function testfunction(){
+  function hidepass(){
   
 
-    document.getElementById("mytextarea").value = "You clicked the button " + counter + " times";
+    document.getElementById("mytextarea").value = "You clicked the button and hid the first password";
      counter += 1;
 
+     document.getElementById("hide1").hidden = true;
 
 }
 
+function displaypass(){
 
+document.getElementById("mytextarea").value = document.getElementById("hide1").innerHTML;
+
+}
 </script>
 
 
