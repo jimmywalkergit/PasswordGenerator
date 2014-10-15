@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+
+
   def Homepage
   end
 
@@ -9,5 +11,7 @@ class PagesController < ApplicationController
   end
 
   def testinput
+  	render 'testinput.js.erb'
+  	
   end
 end

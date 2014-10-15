@@ -20,6 +20,8 @@ display: none;
 <input class = "btn btn-primary" id="clickMe" type="button" value="Generate Password" onclick="displaypass();" />
 
 <%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
+
+<!--<%= button_to "Server", testinput_path, :method => :get, class: 'btn btn-primary'%> -->
 <a href="/testinput.js.erb" data-method="GET" data-remote="true" class="btn btn-primary">Server Button</a>
 
 <br>
@@ -100,13 +102,3 @@ document.getElementById("mytextarea").value = document.getElementById("hide1").i
 
 
 
-    <!-- Bootstrap core JavaScript
-
-
-
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
