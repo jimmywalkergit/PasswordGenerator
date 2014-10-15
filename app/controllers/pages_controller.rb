@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def Page2
   end
+
+  def testinput
+  end
 end
