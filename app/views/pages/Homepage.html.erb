@@ -22,17 +22,13 @@ display: none;
 <%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
 
 
-<a href="/testinput.js.erb" data-method="GET" data-remote="true" class="btn btn-primary">Server Button</a>
-
-<% form_tag(:action => 'stringsub') do %>
-<%= text_area(:myform, :comments, :cols => '20', :rows => '10')%>
-<%= submit_tag("Submit") %>
-<%end%>
+<!--<a href="/testinput.js.erb" data-method="GET" data-remote="true" class="btn btn-primary">Server Button</a>
+-->
 
 <%= form_tag(:action =>'stringsub') do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "Send To Server:") %>
   <%= text_field_tag(:mystring) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Send") %>
 <% end %>
 
 <br>

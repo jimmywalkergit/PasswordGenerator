@@ -10,22 +10,15 @@ class PagesController < ApplicationController
   def Page2
   end
 
-  def testinput
-  forminput = params['myform']['comments']
-
-  @formstring = forminput + " this went to the server!!!!!!!"
-
-
-
-  end
 
   def stringsub
 forminput = params['mystring']
 
-  formstring = forminput + " this went to the server"
-
+  @formstring = forminput + " - you submitted this to the server, you can't see how i added this line to it though"
 
   end
 
+def show
+end
 
 end
