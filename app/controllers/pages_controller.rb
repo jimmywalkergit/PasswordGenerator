@@ -11,7 +11,21 @@ class PagesController < ApplicationController
   end
 
   def testinput
-  	render 'testinput.js.erb'
-  	
+  forminput = params['myform']['comments']
+
+  @formstring = forminput + " this went to the server!!!!!!!"
+
+
+
   end
+
+  def stringsub
+forminput = params['mystring']
+
+  formstring = forminput + " this went to the server"
+
+
+  end
+
+
 end

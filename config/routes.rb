@@ -1,4 +1,5 @@
 PasswordGenerator::Application.routes.draw do
+  get "myinput/new"
   get "pages/Homepage"
   get "pages/Page1"
   get "pages/Page2"
@@ -8,7 +9,9 @@ match '/page1', to: 'pages#Page1', via: 'get'
 match '/testinput', to: 'pages#testinput', via: 'get'
 match '/testinput.js.erb', to: 'pages#testinput', via: 'get'
 
-
+post 'pages/stringsub'
+resources :pages
+resources :myinput
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
