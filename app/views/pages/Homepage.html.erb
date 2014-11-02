@@ -31,17 +31,18 @@ padding-top: 20px;
 -->
 
 <%= form_tag(:action =>'stringsub') do %>
-  <%= label_tag(:q, "Send To Server:") %>
+  <%= label_tag(:q, "Evaluate Your Password:") %>
   <%= text_field_tag(:mystring) %>
   <%= submit_tag("Send") %>
 <% end %>
+
 <br>
 <%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
 <br>
 
 <br>
 <hr>
-<p>Try Our Algorithm Created Version For A Higher Score!<p>
+<p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2><p>
 
 <p id= "hide1">Random 8 digit number: <%=randomnums()%></p>
 
@@ -58,7 +59,7 @@ padding-top: 20px;
 <p>Test Easier Random: <%=randomtest()%></p>
 
 <br>
-<p>Test Secure Random <%=randomsecure()%></p>
+<p>Test Secure Random: <%=randomsecure()%></p>
 
 <br>
 </div>
