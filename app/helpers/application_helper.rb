@@ -84,6 +84,8 @@ randomstring += mynumbers[rand(mynumbers.length)]
 randomstring += input[rand(input.length)]
 randomstring += stringlist[rand(stringlist.length)]
 
+mynum = rand(randomstring.length)
+randomstring[mynum] = randomstring[mynum].upcase
 i += 1
 end
 
