@@ -5,6 +5,14 @@ p.hidden{
 display: none;
 
 }
+
+.padthis{
+padding-top: 20px;
+
+}
+
+
+
 </style>
 
 <div class="container" id="body">
@@ -13,13 +21,10 @@ display: none;
       <h1>Password Generator</h1>
       <br>
 
+<br>
+<br>
 
-<textarea class="form-control" id="mytextarea" rows="3"></textarea>
-<input class = "btn btn-primary" id="clickMe2" type="button" value="Hide Pass1" onclick="hidepass();" />
-
-<input class = "btn btn-primary" id="clickMe" type="button" value="Generate Password" onclick="displaypass();" />
-
-<%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
+<div class="padthis" align= "center">
 
 
 <!--<a href="/testinput.js.erb" data-method="GET" data-remote="true" class="btn btn-primary">Server Button</a>
@@ -30,9 +35,13 @@ display: none;
   <%= text_field_tag(:mystring) %>
   <%= submit_tag("Send") %>
 <% end %>
+<br>
+<%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
+<br>
 
 <br>
-<br>
+<hr>
+<p>Try Our Algorithm Created Version For A Higher Score!<p>
 
 <p id= "hide1">Random 8 digit number: <%=randomnums()%></p>
 
@@ -46,7 +55,13 @@ display: none;
 
 <br>
 
-<p>Test easier random: <%=randomtest()%></p>
+<p>Test Easier Random: <%=randomtest()%></p>
+
+<br>
+<p>Test Secure Random <%=randomsecure()%></p>
+
+<br>
+</div>
 </div>
     </div><!-- /.container -->
 

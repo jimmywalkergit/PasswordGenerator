@@ -68,7 +68,30 @@ return randomstring
 
 end
 
+def randomsecure()
+i = 0
+input = "!@#$%&+="
+mynumbers = "1234567890"
 
+stringlist = ["and", "or", "the", "each", "cat", "dog", "horse", "pig", "rope", "house", "lake", "tree", "apple", 
+"big", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy"]
+randomstring = ""
+
+
+while i < 4 do
+
+randomstring += mynumbers[rand(mynumbers.length)]
+randomstring += input[rand(input.length)]
+randomstring += stringlist[rand(stringlist.length)]
+
+i += 1
+end
+
+return randomstring
+
+
+
+end
 
 end
 

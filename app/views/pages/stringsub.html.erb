@@ -1,6 +1,30 @@
+<style type="text/css">
+.padthis{
+padding-top: 50px;
 
-<p><%= @formstring%></p>
+}
+</style>
+
+
+
+
+
+
+
 <br>
+<br>
+
+<div class="padthis" align= "center">
+
+<p><%= @formstring%> Input Score: <b><%=@myinputscore%></b></p>
+<br>
+<p><b><%=@numberscore%></b></p>
+<p><b><%=@lengthscore%></b></p>
+<p><b><%=@specialscore%></b></p>
+
+<br>
+<hr>
+<p>Try Our Algorithm Created Version For A Higher Score!<p>
 
 <p id= "hide1">Random 8 digit number: <%=randomnums()%></p>
 
@@ -14,7 +38,10 @@
 
 <br>
 
-<p>Test easier random: <%=randomtest()%></p>
+<p>Test Easier Random: <%=randomtest()%></p>
 
 <br>
+<p>Test Secure Random <%=randomsecure()%></p>
 
+<br>
+</div>
