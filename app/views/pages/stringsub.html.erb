@@ -18,8 +18,10 @@ padding-top: 50px;
 
 <p><%= @formstring%> </p> 
 
-<h3><p>Input Score: <b><%=@myinputscore%></b></p></h3>
+<h3><p>Password Score: <b><%=@myinputscore%></b></p></h3>
 <br>
+
+
 <p><b><%=@numberscore%></b></p>
 <p><b><%=@lengthscore%></b></p>
 <p><b><%=@specialscore%></b></p>
@@ -29,22 +31,13 @@ padding-top: 50px;
 <hr>
 <p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2><p>
 
-<p id= "hide1">Random 8 digit number: <b><%=randomnums()%></b></p>
-
+<p>Random Length <%=@inputlength%>:<b> <%=@lengthletterpass%></b></p>
 <br>
 
-<p>Random 8 letter string: <b><%=randomletters()%></b></p>
+<p>OaklandSecure Length <%=@inputlength%>: <b><%=@lengthsecurepass%></p></b>
 
 <br>
-
-<p>Random 8 letter/number string:<b> <%=randomletternum()%></b></p>
-
-<br>
-
-<p>Test Easier Random: <b><%=randomtest()%></b></p>
-
-<br>
-<p>Test Secure Random: <b><%=randomsecure()%></b></p>
+<p>OaklandSecure Random: <b><%=randomsecure()%></b></p>
 
 <br>
 </div>

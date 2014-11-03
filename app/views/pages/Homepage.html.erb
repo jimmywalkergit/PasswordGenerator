@@ -18,7 +18,7 @@ padding-top: 20px;
 <div class="container" id="body">
 <div class="hero-unit">
 
-      <h1>Password Generator</h1>
+      <h1><b>OaklandSecure Password Generator</b></h1>
       <br>
 
 <br>
@@ -29,37 +29,36 @@ padding-top: 20px;
 
 <!--<a href="/testinput.js.erb" data-method="GET" data-remote="true" class="btn btn-primary">Server Button</a>
 -->
-
+<div align="center">
 <%= form_tag(:action =>'stringsub') do %>
   <%= label_tag(:q, "Evaluate Your Password:") %>
   <%= text_field_tag(:mystring) %>
+  <br>
+    <%= label_tag(:q, "Enter Generation Length:") %>
+  <%= text_field_tag(:lengthtomake) %>
   <%= submit_tag("Send") %>
 <% end %>
 
 <br>
 <%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
 <br>
-
+</div>
 <br>
 <hr>
-<p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2><p>
+<div align= "center">
+<p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2></p>
+<h8>(SomethingMemorablewitha$ymbolAnd#2)</h8>
+<br>
+<br>
 
-<p id= "hide1">Random 8 digit number: <b><%=randomnums()%></b></p>
+<p>Random 8 Character String: <b><%=randomletters()%></b></p>
 
 <br>
 
-<p>Random 8 letter string: <b><%=randomletters()%></b></p>
+<p>OaklandSecure Word Blocks: <b><%=randomtest()%></b></p>
 
 <br>
-
-<p>Random 8 letter/number string:<b> <%=randomletternum()%></b></p>
-
-<br>
-
-<p>Test Easier Random: <b><%=randomtest()%></b></p>
-
-<br>
-<p>Test Secure Random: <b><%=randomsecure()%></b></p>
+<p>OaklandSecure Random: <b><%=randomsecure()%></b></p>
 
 <br>
 </div>

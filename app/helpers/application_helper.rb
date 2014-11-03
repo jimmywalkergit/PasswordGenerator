@@ -12,15 +12,30 @@ module ApplicationHelper
 
 	end
 
+	def generatepass(genlength)
+	i = 0
 	
-
-	def randomletters()
-		i = 0
 		letters = "abcdefghijklmnopqrstuvwxyz"
 		randomstring = ""
 
-			while i<8 do
+			while i<genlength do
 				randomstring << letters[rand(26)]
+				i += 1
+			end	
+			
+
+
+
+
+	end
+
+	def randomletters()
+		i = 0
+		letters = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM1234567890!@$%^&*()_"
+		randomstring = ""
+
+			while i<8 do
+				randomstring << letters[rand(letters.length)]
 				i += 1
 			end	
 			
@@ -49,8 +64,9 @@ i = 0
 input = "!@#$%&+="
 
 
-stringlist = ["and", "or", "the", "each", "cat", "dog", "horse", "pig", "rope", "house", "lake", "tree", "apple", 
-"big", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy"]
+stringlist = ["and", "more", "the", "each", "most","cat","are", "really", "dog", "horse", "pig", "house", "lake", "tree", "apple", 
+"greasy", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy", "mostly", "Oakland", "Grizzlies", "oakland", "grizzlies", "Dodge", "dodge", "Kresge",
+"kresge", "South", "south", "foundation"]
 randomstring = ""
 
 
@@ -73,8 +89,9 @@ i = 0
 input = "!@#$%&+="
 mynumbers = "1234567890"
 
-stringlist = ["and", "or", "the", "each", "cat", "dog", "horse", "pig", "rope", "house", "lake", "tree", "apple", 
-"big", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy"]
+stringlist = ["and", "more", "the", "each", "most","cat","are", "really", "dog", "horse", "pig", "house", "lake", "tree", "apple", 
+"greasy", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy", "mostly", "Oakland", "Grizzlies", "oakland", "grizzlies", "Dodge", "dodge", "Kresge",
+"kresge", "South", "south", "foundation"]
 randomstring = ""
 
 

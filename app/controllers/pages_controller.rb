@@ -13,6 +13,31 @@ class PagesController < ApplicationController
 
   def stringsub
 	forminput = params['mystring']
+	genlength = params['lengthtomake']
+
+mynum = String.new(genlength)
+calccheck = checknum(mynum)
+puts #{calccheck}
+
+if calccheck
+mynum = Integer(mynum)
+
+mypass1 = generateletterpass(mynum)
+@lengthletterpass = mypass1
+
+mypass2 = generatesecurepass(mynum)
+@lengthsecurepass = mypass2
+else
+	@lengthsecurepass = "invalid length"
+	@lengthletterpass = "invalid length"
+end
+
+@inputlength = mynum
+
+
+
+
+
 
 #set variables from input
 
@@ -183,8 +208,56 @@ def show
 
 end
 
+	def generateletterpass(genlength)
+	i = 0
+	length = Integer(genlength)
+		letters = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM1234567890!@$%^&*()_"
+		randomstring = ""
+
+			while i<length do
+				randomstring << letters[rand(letters.length)]
+				i += 1
+			end	
+			
+
+return randomstring
 
 
+	end
+
+def generatesecurepass(genlength)
+i = 0
+length = Integer(genlength)
+input = "!@#$%&+="
+mynumbers = "1234567890"
+
+stringlist = ["and", "more", "the", "each", "most","cat","are", "really", "dog", "horse", "pig", "house", "lake", "tree", "apple", 
+"greasy", "small", "dirty", "solid", "quick", "hot", "frozen", "slimy", "mostly", "Oakland", "Grizzlies", "oakland", "grizzlies", "Dodge", "dodge", "Kresge",
+"kresge", "South", "south", "foundation"]
+randomstring = ""
+
+
+while i < length do
+
+randomstring += mynumbers[rand(mynumbers.length)]
+randomstring += input[rand(input.length)]
+randomstring += stringlist[rand(stringlist.length)]
+
+mynum = rand(randomstring.length)
+randomstring[mynum] = randomstring[mynum].upcase
+i += 1
+end
+
+randomstring = randomstring[0..(length-1)]
+return randomstring
+end
+
+
+
+def checknum(input)
+	return true if input=~ /^\d+$/
+	true if Float(input) rescue false
+end
 
 
 
