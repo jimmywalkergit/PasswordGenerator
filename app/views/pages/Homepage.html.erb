@@ -32,10 +32,10 @@ padding-top: 20px;
 <div align="center">
 <%= form_tag(:action =>'stringsub') do %>
   <%= label_tag(:q, "Evaluate Your Password:") %>
-  <%= text_field_tag(:mystring) %>
+  <%= text_field_tag :mystring,nil, :maxlength =>100 %>
   <br>
     <%= label_tag(:q, "Enter Generation Length:") %>
-  <%= text_field_tag(:lengthtomake) %>
+  <%= text_field_tag :lengthtomake,nil, :maxlength => 3  %>
   <%= submit_tag("Send") %>
 <% end %>
 
