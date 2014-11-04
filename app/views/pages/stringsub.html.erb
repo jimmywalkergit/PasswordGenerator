@@ -27,9 +27,13 @@ padding-top: 50px;
 <p><b><%=@specialscore%></b></p>
 <p><b><%=@upperscore%></b></p>
 
+<%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
+
 <br>
 <hr>
 <p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2><p>
+
+<p>Mikes Algorithm Generated: <b><%=@mikesdisplay%></b></p>
 
 <p>Random Length <%=@inputlength%>:<b> <%=@lengthletterpass%></b></p>
 <br>
