@@ -16,7 +16,9 @@ class PagesController < ApplicationController
 	genlength = params['lengthtomake']
 	mikesinput = params['mikesinput']
 
-	mikesoutput = mikesalgorithm(mikesinput)
+
+
+	mikesoutput = String.new(mikesalgorithm(mikesinput))
 
 	if mikesoutput.length < 1
 mikesoutput = "Invalid Entry"
@@ -416,6 +418,15 @@ puts length
 return myString
 
 	end
+
+
+	def evaluatepass(password)
+
+
+
+
+	end
+
 
 	def generateletterpass(genlength)
 	i = 0
