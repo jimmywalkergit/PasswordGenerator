@@ -34,11 +34,11 @@ padding-top: 20px;
   <%= label_tag(:q, "Evaluate Your Password:") %>
   <%= text_field_tag :mystring,nil, :maxlength =>100 %>
   <br>
-    <%= label_tag(:q, "Enter Random Password Generation Length:") %>
-  <%= text_field_tag :lengthtomake,nil, :maxlength => 2  %>
+    <%= label_tag(:q, "Enter Length to Generate:") %>
+  <%= text_field_tag :lengthtomake,10, :maxlength => 2  %>
   <br>
-   <%= label_tag(:q, "Mike's Algorithm:") %>
-  <%= text_field_tag :mikesinput,nil, :maxlength => 100  %>
+   <%= label_tag(:q, "Characters Not to Include:") %>
+  <%= text_field_tag :forbiddenbox,nil, :maxlength => 100  %>
   <%= submit_tag("Send") %>
 <% end %>
 

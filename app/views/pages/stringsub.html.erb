@@ -19,13 +19,24 @@ padding-top: 50px;
 <h3><p>Password Score: <b><%=@myinputscore%></b></p></h3>
 <br>
 
-
+<p><b>Entropy:</b> <%=@testentropy%></p>
 <p><b><%=@numberscore%></b></p>
 <p><b><%=@lengthscore%></b></p>
 <p><b><%=@specialscore%></b></p>
 <p><b><%=@upperscore%></b></p>
 
-<%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
+<hr>
+<%= form_tag(:action =>'stringsub') do %>
+  <%= label_tag(:q, "Evaluate Your Password:") %>
+  <%= text_field_tag :mystring,nil, :maxlength =>100 %>
+  <br>
+    <%= label_tag(:q, "Enter Length to Generate:") %>
+  <%= text_field_tag :lengthtomake,10, :maxlength => 2  %>
+  <br>
+   <%= label_tag(:q, "Characters not to include:") %>
+  <%= text_field_tag :forbiddenbox,nil, :maxlength => 100  %>
+  <%= submit_tag("Send") %>
+<% end %>
 
 <br>
 <hr>

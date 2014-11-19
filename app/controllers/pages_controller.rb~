@@ -12,15 +12,13 @@ class PagesController < ApplicationController
 
 
   def stringsub
-  	@@forbiddenchars = params['forbiddenbox']
 	forminput = params['mystring']
 	genlength = params['lengthtomake']
-	
-	
-	@testentropy = entropy2(forminput)
+	mikesinput = params['mikesinput']
 
 
-	mikesoutput = String.new(mikesalgorithm(forminput))
+
+	mikesoutput = String.new(mikesalgorithm(mikesinput))
 
 	if mikesoutput.length < 1
 mikesoutput = "Invalid Entry"
@@ -481,11 +479,6 @@ def checknum(input)
 	true if Float(input) rescue false
 end
 
-def entropy2(s)
-entropy =  s.each_char.group_by(&:to_s).values.map { |x| x.length / s.length.to_f }.reduce(0) { |e, x| e - x*Math.log2(x) }
-entropy = entropy.round(2)
-entropy
-end
 
 
 end
