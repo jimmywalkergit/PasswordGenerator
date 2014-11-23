@@ -12,6 +12,7 @@ module ApplicationHelper
 
 	end
 
+#start generates
 	def generatepass(genlength)
 	i = 0
 	
@@ -23,18 +24,48 @@ module ApplicationHelper
 				i += 1
 			end	
 			
-
+			return randomstring
 
 
 
 	end
 
+	def generatenums(genlength)
+		i = 0
+	
+		letters = "1234567890"
+			randomstring = ""
+
+			while i<genlength do
+				randomstring << letters[rand(10)]
+				i += 1
+			end	
+
+			return randomstring
+	end
+
+	def generateboth(genlength)
+		i = 0
+	
+		letters = "1234567890abcdefghijklmnopqrstuvwxyz"
+			randomstring = ""
+
+			while i<genlength do
+				randomstring << letters[rand(36)]
+				i += 1
+			end	
+
+			return randomstring
+	end
+
+
+#end generates
 	def randomletters()
 		i = 0
 		letters = "abcdefghijklmnopqrstuvwxyzQWERTYUIOPASDFGHJKLZXCVBNM1234567890!@$%^&*()_"
 		randomstring = ""
 
-			while i<8 do
+			while i<12 do
 				randomstring << letters[rand(letters.length)]
 				i += 1
 			end	

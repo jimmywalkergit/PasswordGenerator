@@ -1,129 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
 
 
-<style TYPE="text/css">
-p.hidden{
-display: none;
-
-}
-
-.padthis{
-padding-top: 20px;
+<style>
+#alignthiscenter{
+  text-align: center;
 
 }
-
-
-
 </style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Pass Generator</title>
 
-<div class="container" id="body">
-<div class="hero-unit">
+<%= stylesheet_link_tag "form_style.css"%>
 
-      <h1><b>OaklandSecure Password Generator</b></h1>
-      <br>
+</head>
+<body>
 
-<br>
-<br>
+<h3>My Pass Generator</h3>
 
-<div class="padthis" align= "center">
-
-
-<!--<a href="/testinput.js.erb" data-method="GET" data-remote="true" class="btn btn-primary">Server Button</a>
--->
-<div align="center">
-<%= form_tag(:action =>'stringsub') do %>
-  <%= label_tag(:q, "Evaluate Your Password:") %>
-  <%= text_field_tag :mystring,nil, :maxlength =>100 %>
-  <br>
-    <%= label_tag(:q, "Enter Length to Generate:") %>
-  <%= text_field_tag :lengthtomake,10, :maxlength => 2  %>
-  <br>
-   <%= label_tag(:q, "Characters Not to Include:") %>
-  <%= text_field_tag :forbiddenbox,nil, :maxlength => 100  %>
-  <%= submit_tag("Send") %>
-<% end %>
-
-<br>
-<%= button_to "Refresh", root_path, :method => :get, class: 'btn btn-primary' %>
-<br>
-</div>
-<br>
-<hr>
-<div align= "center">
-<p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2></p>
-<h8>(SomethingMemorablewitha$ymbolAnd#2)</h8>
-<br>
-<br>
-
-<p>Random 8 Character String: <b><%=randomletters()%></b></p>
-
-<br>
-
-<p>OaklandSecure Word Blocks: <b><%=randomtest()%></b></p>
-
-<br>
-<p>OaklandSecure Random: <b><%=randomsecure()%></b></p>
-
-<br>
-</div>
-</div>
-    </div><!-- /.container -->
-
-
-    
-
-
-
-
-<script type="text/javascript">
-
-var counter = 1;
-
-
-
-
-
-
-
-  function hidepass(){
+<div id="alignthiscenter">
+<form action="/pages/stringsub" method="post" class="basic-grey">
+    <h1>User Generated Password 
+    </h1>
   
 
-    document.getElementById("mytextarea").value = "You clicked the button and hid the first password";
-     counter += 1;
+  
+  <br>
+  
+  <br>
+    <label>
+        Enter a Phrase or Sentence: 
+        <input id="txtPhrase" type="text" name="mystring" placeholder="Your preferred phrase or sentence" />
+    </label>
+    
+ 
+    
+        
+         
 
-     document.getElementById("hide1").hidden = true;
+   
+  
+  
+         
+        
+  
+  <br>
+  <label>
+        Number of Characters to Generate: <select id="ddlNumofDigits" name="lengthtomake" >
+        <option value="8">8</option>
+        <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    
+        </select>
+    </label> 
 
-}
-
-function displaypass(){
-
-document.getElementById("mytextarea").value = document.getElementById("hide1").innerHTML;
-
-}
-</script>
+      <label>
+         
+       <input id="btnGenerate" class="button" type="submit" value="Generate" />
+    </label>
 
 
+  <br>
+  <hr>
+   <h1>Automatically Generated Passwords</h1>
+        <span>Random Series of Numbers:</span>
+        <p><b><%=generatenums(12)%></b></p>
+    <br>
+  <br>
+        <span>Random Series of Characters:</span>
+        <p><b><%=randomletters()%></b></p>
+
+  <br>
+  <br>
+        <span>Oakland Word Blocks:</span>
+        <p><b><%=randomsecure()%></b></p>
 
 
+  <br>
+    <br>
+        
+         
+</form>
+
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>

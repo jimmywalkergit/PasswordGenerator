@@ -203,6 +203,10 @@ end
 if mylength > 15
 	inputscore += 2
 end
+#length 1/4
+#special 1/3
+#upper 1/1
+#number 1/1
 
 
 

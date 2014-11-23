@@ -1,2 +1,99 @@
-<h1>Pages#Page1</h1>
-<p>Find me in app/views/pages/Page1.html.erb</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+<style>
+#alignthiscenter{
+	text-align: center;
+
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>My Pass Generator</title>
+
+<%= stylesheet_link_tag "form_style.css"%>
+
+</head>
+<body>
+
+<h3>My Pass Generator</h3>
+
+<div id="alignthiscenter">
+<form action="/pages/stringsub" method="post" class="basic-grey">
+    <h1>User Generated Password 
+    </h1>
+	
+
+	
+	<br>
+	
+	<br>
+    <label>
+        Enter a Phrase or Sentence: 
+        <input id="txtPhrase" type="text" name="mystring" placeholder="Your preferred phrase or sentence" />
+    </label>
+    
+ 
+    
+        
+         
+
+   
+	
+	
+         
+        
+	
+	<br>
+	<label>
+        Number of Characters to Generate: <select id="ddlNumofDigits" name="lengthtomake" >
+        <option value="8">8</option>
+        <option value="9">9</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+		<option value="13">13</option>
+		<option value="14">14</option>
+		<option value="15">15</option>
+		<option value="16">16</option>
+		<option value="17">17</option>
+		<option value="18">18</option>
+		<option value="19">19</option>
+		<option value="20">20</option>
+		
+        </select>
+    </label> 
+
+    	<label>
+         
+       <input id="btnGenerate" class="button" type="submit" value="Generate" />
+    </label>
+
+
+	<br>
+	<hr>
+	 <h1>Automatically Generated Passwords</h1>
+        <span>Random Series of Numbers:</span>
+        <p><b><%=generatenums(12)%></b></p>
+    <br>
+	<br>
+        <span>Random Series of Letters:</span>
+        <p><b><%=generatepass(12)%></b></p>
+
+	<br>
+	<br>
+        <span>Random Series of Letters/Numbers:</span>
+        <p><b><%=generateboth(12)%></b></p>
+
+	<br>
+    <br>
+        
+         
+</form>
+
+</div>
+
+
+</body>
+</html>

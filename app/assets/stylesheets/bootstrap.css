@@ -3772,6 +3772,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
+  border-radius:20px;
   position: relative;
   min-height: 50px;
   margin-bottom: 100px;
@@ -4097,7 +4098,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #ADEBB9;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

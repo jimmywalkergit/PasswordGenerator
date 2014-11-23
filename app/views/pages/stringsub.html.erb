@@ -1,9 +1,11 @@
 
-
+<%= stylesheet_link_tag "form_style.css"%>
 <style type="text/css">
-.padthis{
-padding-top: 50px;
 
+
+h4{
+	font-size:200%;
+	font-style:bold;
 }
 
 </style>
@@ -12,11 +14,13 @@ padding-top: 50px;
 
 <div class="padthis" align= "center">
 
+<h3>My Pass Generator</h3>
+<div class="basic-grey">
 
 <!--HTML page view -->
 <p><%= @formstring%> </p> 
 
-<h3><p>Password Score: <b><%=@myinputscore%></b></p></h3>
+<h4><p>Password Score: <b><%=@myinputscore%></b></p></h4>
 <br>
 
 <p><b>Entropy:</b> <%=@testentropy%></p>
@@ -27,30 +31,75 @@ padding-top: 50px;
 
 <hr>
 <%= form_tag(:action =>'stringsub') do %>
-  <%= label_tag(:q, "Evaluate Your Password:") %>
-  <%= text_field_tag :mystring,nil, :maxlength =>100 %>
-  <br>
-    <%= label_tag(:q, "Enter Length to Generate:") %>
-  <%= text_field_tag :lengthtomake,10, :maxlength => 2  %>
-  <br>
-   <%= label_tag(:q, "Characters not to include:") %>
-  <%= text_field_tag :forbiddenbox,nil, :maxlength => 100  %>
-  <%= submit_tag("Send") %>
+ <label>
+        Enter a Phrase or Sentence: 
+        <input id="txtPhrase" type="text" name="mystring" placeholder="Your preferred phrase or sentence" />
+    </label>
+    
+  
+    
+        
+         
+
+   
+	
+	
+         
+        
+	
+	<br>
+	<label>
+        Number of Characters to Generate: <select id="ddlNumofDigits" name="lengthtomake" >
+               <option value="8">8</option>
+        <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+		
+        </select>
+    </label> 
+
+    	<label>
+         
+       <input id="btnGenerate" class="button" type="submit" value="Generate" />
+    </label>
+
 <% end %>
 
 <br>
 <hr>
 <p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2><p>
 
-<p>Mikes Algorithm Generated: <b><%=@mikesdisplay%></b></p>
+<span>Algorithm Generated:</span> 
+<p><b><%=@mikesdisplay%></b></p>
 
-<p>Random Length <%=@inputlength%>:<b> <%=@lengthletterpass%></b></p>
+<span>Random Characters Length <%=@inputlength%>:</span> <p><b><%=@lengthletterpass%></b></p>
+
+
+<span>OaklandSecure Length <%=@inputlength%>:</span> 
+<p><b><%=@lengthsecurepass%></b></p>
+
+        <span>Oakland Word Blocks:</span>
+        <p><b><%=randomsecure()%></b></p>
+
 <br>
-
-<p>OaklandSecure Length <%=@inputlength%>: <b><%=@lengthsecurepass%></p></b>
-
-<br>
-<p>OaklandSecure Random: <b><%=randomsecure()%></b></p>
-
-<br>
+</div>
 </div>
