@@ -19,6 +19,8 @@ class PagesController < ApplicationController
 	
 	@testentropy = entropy2(forminput)
 
+	myentropy = entropy2(forminput)
+
 
 	mikesoutput = String.new(mikesalgorithm(forminput))
 
@@ -58,7 +60,6 @@ inputstring = String.new(forminput)
 inputscore = 0
 mylength = inputstring.length
 lengthstring = ""
-haslength = false
 haschar = false
 hasnum = false
 hasupper = false
@@ -73,7 +74,7 @@ jcounter = 0
 
 #check length
 if mylength > 7
-haslength = true
+
 lengthstring = "Length Status: Long"
 else
 lengthstring = "Length Status: Short"
@@ -188,25 +189,26 @@ if hasupper
 inputscore += 1
 end
 if haschar
-	inputscore += 3
+	inputscore += 1
 end
 if hasnum 
 	inputscore += 1
 end
-if haslength
-	inputscore += 2
-end
-if mylength > 12
+
+if mylength > 7
 	lengthstring = "Length Status: Very Long"
 	inputscore += 1
 end
-if mylength > 15
+if mylength > 14
 	inputscore += 2
 end
-#length 1/4
-#special 1/3
+
+inputscore += myentropy.round
+#length 1/2
+#special 1/1
 #upper 1/1
 #number 1/1
+#entropy 1/?
 
 
 
