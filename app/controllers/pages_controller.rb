@@ -306,7 +306,7 @@ ranNum += 1
                 randomString = ranA[rand(ranA.length)]
                  myString[i] = randomString
               elsif myString[i] == "b" then
-                 randomStrinr the server is setup we will be able to ig = ranB[rand(ranB.length)]
+                 randomString = ranB[rand(ranB.length)]
                  myString[i] = randomString
               elsif myString[i] == "c" then
                 randomString = ranC[rand(ranC.length)]
