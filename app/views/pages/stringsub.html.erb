@@ -13,6 +13,20 @@ h4{
     background: #FFF url(<%= asset_path 'down-arrow.png'%>) no-repeat right;
 }
 
+a:link {
+    color: #523510;
+}
+
+/* visited link */
+a:visited {
+    color: #523510;
+}
+
+/* mouse over link */
+a:hover {
+    color: #523510;
+}
+
 
 </style>
 
@@ -20,7 +34,7 @@ h4{
 
 <div class="padthis" align= "center">
 
-<h3>MyPass Generator</h3>
+<h3><%=link_to 'MyPass Generator', "/"  %></h3>
 <div class="basic-grey">
 
 <!--HTML page view -->

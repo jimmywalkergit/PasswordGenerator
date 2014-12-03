@@ -16,6 +16,20 @@
     background: #FFF url(<%= asset_path 'down-arrow.png'%>) no-repeat right;
 }
 
+a:link {
+    color: #523510;
+}
+
+/* visited link */
+a:visited {
+    color: #523510;
+}
+
+/* mouse over link */
+a:hover {
+    color: #523510;
+}
+
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>My Pass Generator</title>
@@ -25,12 +39,12 @@
 </head>
 <body>
 
-<h3>MyPass Generator</h3>
+<h3><%=link_to 'MyPass Generator', "/"  %></h3>
 
 <div id="alignthiscenter">
 <form action="/pages/stringsub" method="post" class="basic-grey">
-    <h1>User Generated Password 
-    </h1>
+    <h2>User Generated Password 
+    </h2>
   
 
   
@@ -91,7 +105,7 @@
 
   <br>
   <hr>
-   <h1>Automatically Generated Passwords</h1>
+   <h2>Automatically Generated Passwords</h2>
         <span>Random Series of Numbers:</span>
         <p><b><%=generatenums(12)%></b></p>
     <br>
