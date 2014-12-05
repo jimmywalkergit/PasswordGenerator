@@ -15,9 +15,10 @@ class PagesController < ApplicationController
   	@@forbiddenchars = params['forbiddenbox']
 	forminput = params['mystring']
 	genlength = params['lengthtomake']
-	
-	somestring = "hi im a string"
-	manywords = jeremyscheck(forminput)
+	@formstring = forminput
+	testvariable = String.new(forminput)
+
+	manywords = jeremyscheck(testvariable)
 	
 	
 	@testentropy = entropy2(forminput)
@@ -31,7 +32,7 @@ class PagesController < ApplicationController
 if manywords
 
 
-@mikesdisplay=jeremysalg(somestring)
+@mikesdisplay=jeremysalg(testvariable)
 
 else
 
@@ -238,7 +239,7 @@ inputscore += myentropy.round
 @specialscore = hascharstring
 #insert algorithms here
   
-  @formstring = forminput
+
 
 
 
@@ -528,11 +529,81 @@ def jeremyscheck(myvar)
 
 end
 
-
+#jeremys stuff
 def jeremysalg(start)
+sub = start.split(" ")
+        count = (start.length - start.gsub!(/\s+/, "").length + 1) * 0.4
+        count = count.to_i
 
+        if count == 0
+        
+        end
+        size = sub.length - 1
+    
+            while count !=0 
+                randPick = rand(sub.length)
+                sub[randPick] = scramble(sub, randPick)
+                count = count - 1
+            end
+
+            for i in 0..size
+                if sub[i].match(" ")
+                    sub[i] = sub[i].strip
+                else
+                    sub[i] = sub[i].upcase
+                    #singleString = sub[i].split("")
+                    #singleCharacter = singleString[0]
+                    #sub[i] = singleCharacter.join("")
+                end
+                
+                if rand(4) == 0
+                   sub[i] = symbol(sub, i)
+                end
+
+            end
+
+        return sub
 
 	end
+
+
+def single(start)
+        start = start.split("").shuffle().join()       
+        return start
+    end
+
+
+    def short(sub)
+        finish = sub.shuffle().join()
+        return finish
+    end
+
+
+    def scramble(sub, randPick)
+        size = sub[randPick].length-1
+        num = Array.new
+        strS = sub[randPick].split("")
+        strF = ""
+
+        for x in 0..size
+            num = num.concat([x])
+        end
+        
+        for i in 0..size
+            r = rand(size - i)
+            strF += strS[r]
+            num.delete_at(r)
+        end
+
+        return sub[randPick].replace(strF).downcase.concat(" ")
+    end
+
+def symbol(sub, i)
+    symbols = ['-', '!', '@', '#', '$', '%', '^', '&', '*', '?']
+    return sub[i].concat(symbols[rand(9)])
+    end
+
+
 
 
 
