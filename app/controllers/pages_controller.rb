@@ -16,11 +16,24 @@ class PagesController < ApplicationController
 	forminput = params['mystring']
 	genlength = params['lengthtomake']
 	
+	somestring = "hi im a string"
+	manywords = jeremyscheck(forminput)
+	
 	
 	@testentropy = entropy2(forminput)
 
 	myentropy = entropy2(forminput)
 
+
+
+
+
+if manywords
+
+
+@mikesdisplay=jeremysalg(somestring)
+
+else
 
 	mikesoutput = String.new(mikesalgorithm(forminput))
 
@@ -29,6 +42,12 @@ class PagesController < ApplicationController
 	end
 
 	@mikesdisplay = mikesoutput
+
+end
+
+
+
+
 
 mynum = String.new(genlength)
 calccheck = checknum(mynum)
@@ -220,6 +239,8 @@ inputscore += myentropy.round
 #insert algorithms here
   
   @formstring = forminput
+
+
 
   end
 
@@ -490,8 +511,29 @@ end
 def entropy2(s)
 entropy =  s.each_char.group_by(&:to_s).values.map { |x| x.length / s.length.to_f }.reduce(0) { |e, x| e - x*Math.log2(x) }
 entropy = entropy.round(2)
-entropy
+return entropy
 end
+
+
+
+def jeremyscheck(myvar)
+	
+	checker = myvar.include? " "
+
+    if checker 
+    	return true
+    else
+    	return false
+    end
+
+end
+
+
+def jeremysalg(start)
+
+
+	end
+
 
 
 end
