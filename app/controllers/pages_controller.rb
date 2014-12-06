@@ -107,13 +107,7 @@ jcounter = 0
 
 
 
-#check length
-if mylength > 7
 
-lengthstring = "Length Status: Long"
-else
-lengthstring = "Length Status: Short"
-end
 
 
 
@@ -226,11 +220,18 @@ if hasnum
 	inputscore += 1
 end
 
-if mylength > 7
-	lengthstring = "Length Status: Very Long"
+#check length
+if mylength <= 8
+
+lengthstring = "Length Status: Short"
+end
+
+if mylength > 8
+	lengthstring = "Length Status: Long"
 	inputscore += 1
 end
 if mylength > 14
+	lengthstring = "Length Status: Very Long"
 	inputscore += 2
 end
 
