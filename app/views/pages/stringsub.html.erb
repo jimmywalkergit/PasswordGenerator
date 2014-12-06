@@ -38,7 +38,9 @@ a:hover {
 <div class="basic-grey">
 
 <!--HTML page view -->
-<p><%= @formstring%> </p> 
+
+
+<p><b>What You Entered:</b> <%= @formstring%></p> 
 
 <h4><p>Password Score: <b><%=@myinputscore%></b></p></h4>
 <br>
@@ -48,6 +50,12 @@ a:hover {
 <p><b><%=@lengthscore%></b></p>
 <p><b><%=@specialscore%></b></p>
 <p><b><%=@upperscore%></b></p>
+<br>
+<hr>
+
+<b>Algorithm Generated Improvement:</b> <p><%=@mikesdisplay%></p> 
+
+<h4><p>Algorithm Password Score: <b><%=@improvedscore%></b></p></h4>
 
 <hr>
 <%= form_tag(:action =>'stringsub') do %>
@@ -108,8 +116,6 @@ a:hover {
 <hr>
 <p><h2>Try Our Algorithm Created Versions For A Higher Score!</h2><p>
 
-<span>Algorithm Generated:</span> 
-<p><b><%=@mikesdisplay%></b></p>
 
 <span>Random Characters Length <%=@inputlength%>:</span> <p><b><%=@lengthletterpass%></b></p>
 

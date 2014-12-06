@@ -18,7 +18,9 @@ class PagesController < ApplicationController
 	@formstring = forminput
 	testvariable = String.new(forminput)
 
-	manywords = jeremyscheck(testvariable)
+	
+	#***set to true to enable jeremy's algorithm***#
+	manywords = false
 	
 	
 	@testentropy = entropy2(forminput)
@@ -31,8 +33,16 @@ class PagesController < ApplicationController
 
 if manywords
 
+mikesoutput = jeremysalg(testvariable)
+@mikesdisplay= mikesoutput
 
-@mikesdisplay=jeremysalg(testvariable)
+if mikesoutput.length < 1
+	mikesoutput = "Invalid Entry"
+	@improvedscore = "Invalid Entry"
+else
+@improvedscore = getscore(mikesoutput)
+	end
+
 
 else
 
@@ -40,11 +50,15 @@ else
 
 	if mikesoutput.length < 1
 	mikesoutput = "Invalid Entry"
+	@improvedscore = "Invalid Entry"
+else
+@improvedscore = getscore(mikesoutput)
 	end
 
 	@mikesdisplay = mikesoutput
 
 end
+
 
 
 
@@ -65,6 +79,7 @@ mypass2 = generatesecurepass(mynum)
 else
 	@lengthsecurepass = "Invalid Length"
 	@lengthletterpass = "Invalid Length"
+
 end
 
 @inputlength = mynum
@@ -148,7 +163,6 @@ while jcounter < specialrange.length do
 checkchar = inputstring[icounter]
 checknum = specialrange[jcounter]
 
-puts "checking #{checkchar} and #{checknum}"
 
 if checknum == checkchar
 	haschar = true
@@ -163,7 +177,6 @@ jcounter += 1
 end
 icounter += 1
 jcounter = 0
-puts "icounter is #{icounter}"
 end
 icounter = 0
 jcounter = 0
@@ -182,7 +195,6 @@ while jcounter < upperrange.length do
 checkchar = inputstring[icounter]
 checknum = upperrange[jcounter]
 
-puts "checking #{checkchar} and #{checknum}"
 
 if checknum == checkchar
 	hasupper = true
@@ -197,7 +209,6 @@ jcounter += 1
 end
 icounter += 1
 jcounter = 0
-puts "icounter is #{icounter}"
 end
 jcounter = 0
 icounter = 0
@@ -532,7 +543,7 @@ end
 #jeremys stuff
 def jeremysalg(start)
 sub = start.split(" ")
-        count = (start.length - start.gsub!(/\s+/, "").length + 1) * 0.4
+        count = (start.length - start.gsub(/\s+/, "").length + 1) * 0.4
         count = count.to_i
 
         if count == 0
@@ -604,7 +615,166 @@ def symbol(sub, i)
     end
 
 
+def getscore(forminput)
 
+
+
+
+#set variables from input
+
+inputstring = forminput.to_s
+inputscore = 0
+mylength = inputstring.length
+lengthstring = ""
+haschar = false
+hasnum = false
+hasupper = false
+hasupperstring = "Mixed Case Status: False"
+hascharstring = "Special Character Status: False"
+hasnumstring= "Number Status: False"
+icounter = 0
+jcounter = 0
+
+
+
+
+#check length
+if mylength > 7
+
+lengthstring = "Length Status: Long"
+else
+lengthstring = "Length Status: Short"
+end
+
+
+
+
+#check if any character is a number
+numrange = "1234567890"
+
+
+
+while icounter < mylength do
+
+while jcounter <= 9 do
+checkchar = inputstring[icounter]
+checknum = numrange[jcounter]
+
+puts "checking #{checkchar} and #{checknum}"
+
+if checknum == checkchar
+	hasnum = true
+	hasnumstring = "Number Status: True"
+	else
+
+	end
+
+jcounter += 1
+
+
+end
+icounter += 1
+jcounter = 0
+puts "icounter is #{icounter}"
+end
+icounter = 0
+jcounter = 0
+#end number checking
+
+
+
+#check if any char is a special
+
+specialinput = "~!@#$%^&*()_+|{}>:<?/`;'[]=-"
+specialrange = String.new(specialinput)
+
+while icounter < mylength do
+
+while jcounter < specialrange.length do
+checkchar = inputstring[icounter]
+checknum = specialrange[jcounter]
+
+
+if checknum == checkchar
+	haschar = true
+	hascharstring = "Special Character Status: True"
+	else
+
+	end
+
+jcounter += 1
+
+
+end
+icounter += 1
+jcounter = 0
+end
+icounter = 0
+jcounter = 0
+#end special checking
+
+
+
+#check for uppercase letters
+
+upperinput = "QWERTYUIOPASDFGHJKLZXCVBNM"
+upperrange = String.new(upperinput)
+
+while icounter < mylength do
+
+while jcounter < upperrange.length do
+checkchar = inputstring[icounter]
+checknum = upperrange[jcounter]
+
+
+if checknum == checkchar
+	hasupper = true
+	hasupperstring = "Mixed Case Status: True"
+	else
+
+	end
+
+jcounter += 1
+
+
+end
+icounter += 1
+jcounter = 0
+end
+jcounter = 0
+icounter = 0
+#end upper checking
+
+
+
+if hasupper
+inputscore += 1
+end
+if haschar
+	inputscore += 1
+end
+if hasnum 
+	inputscore += 1
+end
+
+if mylength > 7
+	lengthstring = "Length Status: Very Long"
+	inputscore += 1
+end
+if mylength > 14
+	inputscore += 2
+end
+myentropy = entropy2(inputstring)
+inputscore += myentropy.round
+#length 1/2
+#special 1/1
+#upper 1/1
+#number 1/1
+#entropy 1/?
+
+return inputscore
+
+end
 
 
 end
