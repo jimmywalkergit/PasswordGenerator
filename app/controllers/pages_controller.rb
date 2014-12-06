@@ -38,7 +38,7 @@ mikesoutput = jeremysalg(testvariable)
 
 if mikesoutput.length < 1
 	mikesoutput = "Invalid Entry"
-	@improvedscore = "Invalid Entry"
+	@improvedscore = "0"
 else
 @improvedscore = getscore(mikesoutput)
 	end
@@ -50,7 +50,7 @@ else
 
 	if mikesoutput.length < 1
 	mikesoutput = "Invalid Entry"
-	@improvedscore = "Invalid Entry"
+	@improvedscore = "0"
 else
 @improvedscore = getscore(mikesoutput)
 	end
