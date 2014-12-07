@@ -19,7 +19,7 @@ class PagesController < ApplicationController
 	testvariable = String.new(forminput)
 
 	
-	#***set to true to enable jeremy's algorithm***#
+	#***set to = jeremyscheck(testvariable) to enable jeremy's algorithm***#
 	manywords = false
 	
 	
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
 
 
 
-
+#@mikesdisplay = primary algorithm display, both algorithms are used based on input
 if manywords
 
 mikesoutput = jeremysalg(testvariable)
