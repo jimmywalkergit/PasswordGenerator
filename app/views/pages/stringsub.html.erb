@@ -27,6 +27,29 @@ a:hover {
     color: #523510;
 }
 
+#goodscore{
+    
+      color:green; 
+      text-shadow: -1px 0 black, 0 .5px black, .5px 0 black, 0 -1px black;
+      font-size:120%; 
+    
+}
+
+#okscore{
+    
+      color:#F7D358;
+      text-shadow: -1px 0 black, 0 .5px black, .5px 0 black, 0 -1px black;
+      font-size:120%;
+    
+}
+
+#badscore{
+
+      color:red;  
+      text-shadow: -1px 0 black, 0 .5px black, .5px 0 black, 0 -1px black;
+      font-size:120%;
+    
+}
 
 </style>
 
@@ -56,6 +79,22 @@ a:hover {
 <b>Algorithm Generated Improvement:</b> <p><%=@mikesdisplay%></p> 
 
 <h4><p>Algorithm Password Score: <b><%=@improvedscore%></b></p></h4>
+<br>
+<div id="myscores">   
+    <h5><b>Scoring:</b></h5>  
+    <div id="badscore">
+    <p><5 Weak</p>
+    </div>
+
+    <div id="okscore">
+    <p>5-8 Average</p>
+    </div>
+
+    <div id="goodscore">
+    <p>9+ Good</p>
+    </div>
+   </div>
+
 
 <hr>
 <%= form_tag(:action =>'stringsub') do %>
@@ -64,12 +103,6 @@ a:hover {
         <input id="txtPhrase" type="text" name="mystring" maxlength="200" placeholder="Your preferred phrase or sentence" />
     </label>
     
-  
-    
-        
-         
-
-   
 	
 	
          
