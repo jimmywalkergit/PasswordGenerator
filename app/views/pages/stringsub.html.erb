@@ -29,7 +29,7 @@ a:hover {
 
 #goodscore{
     
-      color:green; 
+      color:#2E824D; 
       text-shadow: -1px 0 black, 0 .5px black, .5px 0 black, 0 -1px black;
       font-size:120%; 
     
@@ -37,7 +37,7 @@ a:hover {
 
 #okscore{
     
-      color:#F7D358;
+      color:#B4AF3F;
       text-shadow: -1px 0 black, 0 .5px black, .5px 0 black, 0 -1px black;
       font-size:120%;
     
@@ -45,7 +45,7 @@ a:hover {
 
 #badscore{
 
-      color:red;  
+      color:#B23F42;  
       text-shadow: -1px 0 black, 0 .5px black, .5px 0 black, 0 -1px black;
       font-size:120%;
     
@@ -65,7 +65,7 @@ a:hover {
 
 <p><b>What You Entered:</b> <%= @formstring%></p> 
 
-<h4><p>Password Score: <b><%=@myinputscore%></b></p></h4>
+<h4><p>Password Score:</p> <b><div id= "score1"><%=@myinputscore%></div></b></h4>
 <br>
 
 <p><b>Entropy:</b> <%=@testentropy%></p>
@@ -78,20 +78,20 @@ a:hover {
 
 <b>Algorithm Generated Improvement:</b> <p><%=@mikesdisplay%></p> 
 
-<h4><p>Algorithm Password Score: <b><%=@improvedscore%></b></p></h4>
+<h4><p>Algorithm Password Score:</p> <b><div id= "score2"><%=@improvedscore%></div></b></h4>
 <br>
 <div id="myscores">   
     <h5><b>Scoring:</b></h5>  
-    <div id="badscore">
-    <p><5 Weak</p>
+    
+    <div id="goodscore">
+    <p>9+ Good</p>
     </div>
 
     <div id="okscore">
     <p>5-8 Average</p>
     </div>
-
-    <div id="goodscore">
-    <p>9+ Good</p>
+    <div id="badscore">
+    <p> &lt;5 Weak</p>
     </div>
    </div>
 
@@ -162,3 +162,44 @@ a:hover {
 <br>
 </div>
 </div>
+
+<script type="text/javascript">
+window.onload = function colors(){
+
+
+var score1 = document.getElementById("score1").innerHTML;
+var score2 = document.getElementById("score2").innerHTML;
+
+var scoredisplay1 = document.getElementById("score1");
+var scoredisplay2 = document.getElementById("score2");
+
+
+if (score1 < 5) {
+scoredisplay1.style.color = '#B23F42';
+}
+if (score1 >=5 && score1 <= 8){
+scoredisplay1.style.color = '#B4AF3F';
+} 
+if (score1 > 8) {
+scoredisplay1.style.color = '#2E824D';
+
+}
+
+
+if (score2 < 5){
+scoredisplay2.style.color = '#B23F42';
+}
+if (score2 >=5 && score1 <= 8){
+scoredisplay2.style.color = '#B4AF3F';
+} 
+if (score2 > 8){
+    scoredisplay2.style.color = '#2E824D';
+
+}
+
+
+
+
+};
+
+</script>
